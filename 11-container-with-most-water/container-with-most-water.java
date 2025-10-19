@@ -1,21 +1,20 @@
 class Solution {
     public static int Harsh(int height[]){
         int max=0;
-        int ls=0;
-        int rt=height.length-1;
-       while(ls<rt){
-
-            int ht=Math.min(height[ls],height[rt]);
-            int width=rt-ls;
-            int solution=width*ht;
+        int lf=0;
+        int rs=height.length-1;
+        while(lf<rs){
+            int min=Math.min(height[lf],height[rs]);
+            int width=rs-lf;
+            int solution=min*width;
             max=Math.max(solution,max);
-
-            if(height[ls]<height[rt]){
-                ls++;
+            if(height[lf]<height[rs]){
+                lf++;
             }else{
-                rt--;
+                rs--;
             }
-       }
+
+        }
         return max;
     }
     public int maxArea(int[] height) {
