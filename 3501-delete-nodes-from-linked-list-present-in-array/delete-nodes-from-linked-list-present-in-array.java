@@ -1,27 +1,34 @@
-import java.util.HashMap;
-
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ * }
+ */
 class Solution {
+
     public ListNode modifiedList(int[] nums, ListNode head) {
 
        
-
-        HashSet<Integer>set=new HashSet<>();
-
-        for(int n:nums){
+        HashSet<Integer> set = new HashSet<>();
+        for (int n : nums) {
             set.add(n);
         }
 
-            ListNode n=new ListNode();
-            ListNode tail=n;
-         ListNode temp = head;
-        while(temp!=null){
-            if(!set.contains(temp.val)){
-                tail.next=new ListNode(temp.val);
-                tail=tail.next;
+        
+        ListNode dummy = new ListNode(-1);
+        ListNode tail = dummy;
+
+        
+        ListNode temp = head;
+        while (temp != null) {
+            if (!set.contains(temp.val)) {
+                tail.next = new ListNode(temp.val);
+                tail = tail.next;
             }
-            temp=temp.next;
+            temp = temp.next;
         }
 
-        return n.next;
+        return dummy.next;
     }
 }
