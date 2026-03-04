@@ -4,16 +4,16 @@ class Solution {
        HashMap<String,ArrayList<String>>mp=new HashMap<>();
 
        for(int i=0;i<strs.length;i++){
-
-            char ch[]=strs[i].toCharArray();
+           char[] ch = strs[i].toCharArray();
             Arrays.sort(ch);
-            String st=new String(ch);
-            if(!mp.containsKey(st)){
-                mp.put(st,new ArrayList<>());
+            String str=new String(ch);
+            if(!mp.containsKey(str)){
+               mp.put(str, new ArrayList<>());
             }
-            mp.get(st).add(strs[i]);
+                mp.get(str).add(strs[i]);
        }
 
        return new ArrayList<>(mp.values());
+
     }
 }
