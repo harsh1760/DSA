@@ -1,23 +1,16 @@
 class Solution {
-
-    public static boolean Harsh(int n) {
-		
-		if(n<0){
-            return false;
-        }
-        int original=n;
-        int rev=0;
-        while(n!=0){
-           int digit=n%10;
-        rev=rev*10+digit;
-        n=n/10;
-        }
-
-        return rev==original;
-
-	}
-
     public boolean isPalindrome(int x) {
-       return Harsh(x);
+        
+        int ori=x;
+        int rev=0;
+
+        while(x>0){
+
+            int last=x%10;
+            rev=rev*10+last;
+            x=x/10;
+        }
+
+        return ori==rev;
     }
 }
