@@ -1,10 +1,8 @@
 class Solution {
     public boolean isHappy(int n) {
         
-       HashSet<Integer>m=new HashSet<>();
 
-       while(n!=1 && !m.contains(n) ){
-             m.add(n);
+       while(n!=1 ){
             int sum=0;
             while(n>0){
 
@@ -14,6 +12,9 @@ class Solution {
                 n=n/10;
             }
             n=sum;
+            if(n==4){
+                return false;
+            }
         }
   
                 return n==1;
