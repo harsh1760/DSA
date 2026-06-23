@@ -5,7 +5,7 @@ class Solution {
         int ori=Math.abs(x);
 
     long rev=0;
-        while(ori!=0){
+        while(ori>0){
             int l=ori%10;
             rev=rev*10+l;
 
