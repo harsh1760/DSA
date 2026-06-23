@@ -1,23 +1,19 @@
 class Solution {
-    public static int Harsh(int n) {
-		
-		int sign=(n<0)? -1:1;
-        n=Math.abs(n);
-        int reverse1=0;
-        while(n>0) {
-       	 	  if(reverse1>(Integer.MAX_VALUE)/10) {
-			 return 0;
-		 }
-       	 int last=n%10;
-       
-       	 reverse1=reverse1*10+last;
-       	 n=n / 10;
-        }
-        int result=reverse1*sign;
-		return result;
-	}
-	
     public int reverse(int x) {
-        return Harsh(x);
+        
+        int sign=(x>0)? 1:-1;
+        int ori=Math.abs(x);
+
+    long rev=0;
+        while(ori!=0){
+            int l=ori%10;
+            rev=rev*10+l;
+
+             if (rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE) {
+                return 0;
+            }
+            ori=ori/10;
+        }
+        return  (int)rev*sign;
     }
 }
