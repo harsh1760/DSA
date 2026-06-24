@@ -1,16 +1,15 @@
 class Solution {
     public boolean isPalindrome(int x) {
         
-        int ori=x;
+        int origin=x;
         int rev=0;
 
         while(x>0){
-
-            int last=x%10;
-            rev=rev*10+last;
+            rev=rev*10+x%10;
             x=x/10;
         }
-
-        return ori==rev;
+        return origin==rev;
+     
+       
     }
 }
