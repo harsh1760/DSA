@@ -1,18 +1,28 @@
 class Solution {
-    public static void sort(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-               
-                if (arr[i] > arr[j]) {
-                    int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
-                }
+    public void sortColors(int[] nums) {
+
+        int left = 0;
+        int right = nums.length - 1;
+        int mid = 0;
+
+        while (mid <= right) {
+
+            if (nums[mid] == 0) {
+                int temp = nums[mid];
+                nums[mid] = nums[left];
+                nums[left] = temp;
+                left++;
+                mid++;
+
+            } else if (nums[mid] == 2) {
+                int temp = nums[mid];
+                nums[mid] = nums[right];
+                nums[right] = temp;
+                right--;
+            } else {
+                mid++;
             }
         }
-    }
 
-    public void sortColors(int[] nums) {
-        sort(nums); 
     }
 }
