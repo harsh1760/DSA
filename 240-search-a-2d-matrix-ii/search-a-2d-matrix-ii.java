@@ -1,20 +1,20 @@
 class Solution {
-    public static boolean Harshad(int matrix[][],int target){
-
-          
-            int row=matrix.length;
-            int col=matrix[0].length;
-
-            for(int i=0;i<row;i++){
-                for(int j=0;j<col;j++){
-                    if(matrix[i][j]==target){
-                        return true;
-                    }
-                }
-            }
-                return false;
-    }
     public boolean searchMatrix(int[][] matrix, int target) {
-       return Harshad(matrix,target);
+        
+        int row=matrix.length-1;
+        int col=0;
+
+
+        while(row>=0 && col<matrix[0].length){
+
+            if(matrix[row][col]==target){
+                return true;
+            }else if(matrix[row][col]<target){
+                col++;
+            }else{
+                row--;
+            }
+        }
+                return false;
     }
 }
