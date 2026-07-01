@@ -3,12 +3,12 @@ class Solution {
         
         int left=0;
         int right=height.length-1;
-        int maxwater=0;
-        while(left<right){
+        int maxarea=0;
+        while(left<=right){
 
             int width=right-left;
-            int area=width*Math.min(height[right],height[left]);
-            maxwater=Math.max(area, maxwater);
+            int area=width* Math.min(height[left],height[right]);
+            maxarea=Math.max(maxarea,area);
 
             if(height[left]<height[right]){
                 left++;
@@ -16,6 +16,6 @@ class Solution {
                 right--;
             }
         }
-        return  maxwater;
+        return maxarea;
     }
 }
