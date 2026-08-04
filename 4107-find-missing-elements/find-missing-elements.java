@@ -3,7 +3,9 @@ class Solution {
 
         int mn = Integer.MAX_VALUE;
         int mx = Integer.MIN_VALUE;
+        HashSet<Integer> s = new HashSet<>();
         for (int n : nums) {
+            s.add(n);
             mn = Math.min(mn, n);
             mx = Math.max(mx, n);
         }
@@ -11,17 +13,9 @@ class Solution {
         ArrayList<Integer> ln = new ArrayList<>();
         for (int j = mn; j <= mx; j++) {
 
-            boolean found = false;
-            for (int l : nums) {
-                if (l == j) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
+            if (!s.contains(j)) {
                 ln.add(j);
             }
-
         }
         return ln;
     }
